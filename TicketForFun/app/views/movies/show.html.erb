@@ -28,6 +28,7 @@
   <strong>Director:</strong>
   <%= @movie.director %>
 </p>
-
+<button type="button" class="btn btn-outline-dark btn-sm">
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+</button>

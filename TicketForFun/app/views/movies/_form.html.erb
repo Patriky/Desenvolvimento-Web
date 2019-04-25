@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
+    <%= form.file_field :avatar,class: 'form-control-file' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :gender %>
-    <%= form.text_field :gender %>
+    <%= form.text_field :gender, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :synopsis %>
-    <%= form.text_area :synopsis %>
+    <%= form.text_area :synopsis, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :img %>
-    <%= form.text_field :img %>
+    <%= form.text_field :img, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :director %>
-    <%= form.text_field :director %>
+    <%= form.text_field :director, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="btn btn-outline-dark">
+    <%= form.submit "New movie", class: 'btn btn-sucess' %>
   </div>
 <% end %>

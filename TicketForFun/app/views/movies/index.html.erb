@@ -1,39 +1,42 @@
   <body>
     <br>
     <br>
-    <div class="container-fluid">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="9000">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-          <div class="carousel-item col-md-20 active">
-            <% for index in 0 ... 4 %>
-              <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
-              &emsp;&emsp;
-            <% end %>
-          </div>
-          <div class="carousel-item col-md-20">
-            <% i = 4 %>
-            <% while i < @movies.length %>
-              <% if i + 4 <= @movies.length %>
-                <% for index in i ... i + 4 %>
-                  <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
-                <% end %>
-              <% elsif i + 4 > @movies.length %>
-                <% for index in i ... @movies.length %>
-                  <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
-                <% end %>
-              <% end %>
-              <% i += 4 %>
-            <% end %>
-          </div>
+    <h2>&emsp;Lançamentos</h2>
+    <div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto" role="listbox">
+        <!-- Iniciliza o Carousel (active) -->
+        <div class="carousel-item col-md-20 active">
+          <% for index in 0 ... 4 %>
+            &emsp;&emsp;
+            <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+          <% end %>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <!-- Insere os filmes de 4 em 4 no Carousel -->
+        <div class="carousel-item col-md-20">
+          <% i = 4 %>
+          <% while i < @movies.length %>
+            <% if i + 4 <= @movies.length %>
+              <% for index in i ... i + 4 %>
+                &emsp;&emsp;
+                <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+              <% end %>
+            <% elsif i + 4 > @movies.length %>
+              <% for index in i ... @movies.length %>
+                &emsp;&emsp;
+                <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+              <% end %>
+            <% end %>
+            <% i += 4 %>
+          <% end %>
+        </div>
       </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </body>

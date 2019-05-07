@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *
+ * Deixa a fonte muito pequena: @import "bootstrap";
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
+ @import "bootstrap-sprockets";

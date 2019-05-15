@@ -4,6 +4,19 @@
     <title>Olá, mundo!</title>
   </head>
   <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" <%= link_to "Home", controller: 'welcome', action: 'index'%></a>
+
+       <a href="/login/index">
+        <form class="form-inline">
+          <button type="button" class="btn btn-outline-success my-2 my-sm-0"> 
+            Login
+          </button>
+        </form>
+      </a>
+    </nav>
+
     <div class= "container">
       <h1>Bem vindo ao TicketForFun</h1>
       <h3>Alunos</h3>

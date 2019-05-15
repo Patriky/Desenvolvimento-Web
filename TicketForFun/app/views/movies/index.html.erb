@@ -1,4 +1,16 @@
   <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" <%= link_to "Home", controller: 'welcome', action: 'index'%></a>
+
+      <a href="/login/index">
+        <form class="form-inline">
+          <button type="button" class="btn btn-outline-success my-2 my-sm-0"> 
+            Login
+          </button>
+        </form>
+      </a>
+    </nav>
     <br>
     <br>
     <h2>&emsp;Em exibição</h2>
@@ -6,9 +18,16 @@
       <div class="carousel-inner row w-100 mx-auto" role="listbox">
         <!-- Iniciliza o Carousel (active) -->
         <div class="carousel-item col-md-20 active">
-          <% for index in 0 ... 4 %>
-            &emsp;&emsp;
-            <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+          <% if @movies.length < 4 %>
+            <% for index in 0 ... @movies.length %>
+              &emsp;&emsp;
+              <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+            <% end %>
+          <% else %>
+            <% for index in 0 ... 4 %>
+              &emsp;&emsp;
+              <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+            <% end %>
           <% end %>
         </div>
         <!-- Insere os filmes de 4 em 4 no Carousel -->

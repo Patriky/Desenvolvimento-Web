@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :collaborators
+
   resources :welcome
 
   root 'welcome#index'

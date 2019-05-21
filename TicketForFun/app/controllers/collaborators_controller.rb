@@ -2,9 +2,9 @@ class CollaboratorsController < ApplicationController
   before_action :set_collaborator, only: [:show, :edit, :update, :destroy]
 
   # GET /collaborators
-  # Get /collaborators.json
+  # GET /collaborators.json
   def index
-    @collaborators = Collaborator.new
+    @collaborators = Collaborator.all
   end
 
   # GET /collaborators/1
@@ -69,7 +69,7 @@ class CollaboratorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collaborator_params
-      params.require(:collaborator).permit() # Determinar os atributos do colaborador
+      params.require(:collaborator).permit(:code, :name, :email, :password) # Determinar os atributos do colaborador
     end
 
 end

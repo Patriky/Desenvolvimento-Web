@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @collaborator.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @collaborator.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @collaborator.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @collaborator.password %>
+</p>
+
+<button type="button" class="btn btn-outline-dark btn-sm">
+<%= link_to 'Back', collaborators_path %>
+</button>

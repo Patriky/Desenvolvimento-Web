@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div style="background-color: yellow;">
+	<h2><%= @cinema.name %></h2>
+     <p>
+               <b >ID:</b> <%=  @cinema.id %>
+     </p>
+     <p>
+               <b>Cidade:</b> <%= @cinema.city %>
+     </p>
+     <p>
+               <b>Tipo de estabelecimento:</b> <%= @cinema.type_of_establishment %>
+     </p>
+ </div>
+
+
+<%= link_to 'Edit', edit_cinema_path(@cinema) %> |
+<%= link_to 'Back', cinemas_path %>

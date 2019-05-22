@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2019_05_22_215507) do
     t.string "name"
     t.string "city"
     t.string "type_of_establishment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 
-ActiveRecord::Schema.define(version: 2019_05_17_005013) do
+  end
 
   create_table "collaborators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "code", null: false

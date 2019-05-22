@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 	
+  resources :salas
+  resources :cinemas
   get 'login/index'
 
   get 'entrar', to: 'sessions#new'

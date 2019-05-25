@@ -27,4 +27,4 @@
 /config/master.key
 
 # Ignore databse
-config/database.yml
+/config/database.yml

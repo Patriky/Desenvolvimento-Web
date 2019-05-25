@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class UserSessionsController < ApplicationController
   def new
     redirect_to user_path(current_user) if user_signed_in?
   end
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     sign_out
     flash.now[:success] = 'Logout com sucesso'
-    redirect_to entrar_path
+    redirect_to login_index_path
   end
     
 end

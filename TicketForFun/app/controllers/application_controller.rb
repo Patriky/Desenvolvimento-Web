@@ -3,5 +3,6 @@ class ApplicationController < ActionController::Base
 
   include UserSessionsHelper
   include CollaboratorSessionsHelper
+  include ManagerSessionsHelper
 
 end

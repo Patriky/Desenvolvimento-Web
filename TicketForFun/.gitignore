@@ -28,3 +28,6 @@
 
 # Ignore databse
 /config/database.yml
+
+/Gemfile
+/Genfile.lock

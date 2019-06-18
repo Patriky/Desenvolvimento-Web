@@ -19,5 +19,4 @@ class UserSessionsController < ApplicationController
     flash.now[:success] = 'Logout com sucesso'
     redirect_to login_index_path
   end
-    
 end

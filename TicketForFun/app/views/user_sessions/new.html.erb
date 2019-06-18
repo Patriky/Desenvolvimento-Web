@@ -8,7 +8,7 @@
   </a>
   <div class="col-md-6">
     <br>
-    <%= form_for :session, url: entrar_path, method: :post do |form| %>
+    <%= form_for :session, url: user_enter_path, method: :post do |form| %>
       <div class="form-group">
         <%= form.label :email %>
         <%= form.email_field :email, placeholder: 'Email', class: 'form-control' %>

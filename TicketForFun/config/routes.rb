@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :salas
   resources :cinemas
   
-  get 'entrar', to: 'user_sessions#new'
-  post 'entrar', to: 'user_sessions#create'
-  delete 'sair', to: 'user_sessions#destroy'
+  get 'user_enter', to: 'user_sessions#new'
+  post 'user_enter', to: 'user_sessions#create'
+  delete 'user_leave', to: 'user_sessions#destroy'
   
   get 'collab_enter', to: 'collaborator_sessions#new'
   post 'collab_enter', to: 'collaborator_sessions#create'

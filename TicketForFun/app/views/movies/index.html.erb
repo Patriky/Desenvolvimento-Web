@@ -4,18 +4,16 @@
   <br>
   <br>
   <h2>&emsp;Em exibição</h2>
-  <div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel" align="center">
     <div class="carousel-inner row w-100 mx-auto" role="listbox">
       <!-- Iniciliza o Carousel (active) -->
       <div class="carousel-item col-md-20 active">
         <% if @movies.length < 3 %>
           <% for index in 0 ... @movies.length %>
-            &emsp;&emsp;
             <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
           <% end %>
         <% else %>
           <% for index in 0 ... 3 %>
-            &emsp;&emsp;
             <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
           <% end %>
         <% end %>
@@ -27,12 +25,10 @@
           <% while i < @movies.length %>
             <% if i + 3 <= @movies.length %>
               <% for index in i ... i + 3 %>
-                &emsp;&emsp;
                 <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
               <% end %>
             <% elsif i + 3 > @movies.length %>
               <% for index in i ... @movies.length %>
-                &emsp;&emsp;
                 <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
               <% end %>
             <% end %>

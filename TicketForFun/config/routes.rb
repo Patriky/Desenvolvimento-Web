@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :movies
   resources :users
   resources :collaborators
-  resources :welcome
   resources :managers
   resources :salas
   resources :cinemas
@@ -22,6 +21,6 @@ Rails.application.routes.draw do
   
   get 'login/index'
 
-  root 'welcome#index'
+  root 'movies#index'
 
 end

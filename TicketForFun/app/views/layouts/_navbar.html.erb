@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" <%= link_to "Home", controller: 'welcome', action: 'index'%></a>
+  <a class="navbar-brand" <%= link_to "Home", controller: 'movies', action: 'index'%></a>
   <div class="dropdown">
   <% if user_signed_in? %>
     <button type="button" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown">
@@ -11,9 +11,6 @@
       </li>
       <li>
         <%= link_to 'Editar Perfil', edit_user_path(current_user) %>
-      </li>
-      <li>
-        <%= link_to 'Filmes', movies_path %>
       </li>
       <li>
         <%= link_to 'Logout', user_leave_path, method: :delete %>
@@ -31,9 +28,6 @@
         <%= link_to 'Editar Perfil', edit_collaborator_path(current_collaborator) %>
       </li>
       <li>
-        <%= link_to 'Filmes', movies_path %>
-      </li>
-      <li>
         <%= link_to 'Logout', collab_leave_path, method: :delete %>
       </li>
     </ul>
@@ -49,15 +43,12 @@
         <%= link_to 'Editar Perfil', edit_manager_path(current_manager) %>
       </li>
       <li>
-        <%= link_to 'Filmes', movies_path %>
-      </li>
-      <li>
         <%= link_to 'Logout', manager_leave_path, method: :delete %>
       </li>
     </ul>
   <% else %>
     <a href="/login/index">
-      <button type="button" class="btn btn-outline-success my-2 my-sm-0"> 
+      <button href="/login/index" type="button" class="btn btn-outline-success my-2 my-sm-0"> 
         Login
       </button>
     </a>

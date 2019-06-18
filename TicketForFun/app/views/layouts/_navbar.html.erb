@@ -1,73 +1,57 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" <%= link_to "Home", controller: 'welcome', action: 'index'%></a>
- 
+  <a class="navbar-brand" <%= link_to "Home", controller: 'movies', action: 'index'%></a>
+  <div class="dropdown">
   <% if user_signed_in? %>
-    <div class="dropdown">
-      <a type="button" href="#" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <%= current_user.name %> <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li>
-          <%= link_to 'Meu Perfil', users_path %>
-        </li>
-        <li>
-          <%= link_to 'Editar Perfil', edit_user_path(current_user) %>
-        </li>
-        <li>
-          <%= link_to 'Filmes', movies_path %>
-        </li>
-        <li>
-          <%= link_to 'Logout', sair_path, method: :delete %>
-        </li>
-      </ul>
-    </div>
+    <button type="button" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown">
+      <%= current_user.name %> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to 'Meu Perfil', users_path %>
+      </li>
+      <li>
+        <%= link_to 'Editar Perfil', edit_user_path(current_user) %>
+      </li>
+      <li>
+        <%= link_to 'Logout', user_leave_path, method: :delete %>
+      </li>
+    </ul>
   <% elsif collaborator_signed_in? %>
-    <div class="dropdown">
-      <a type="button" href="#" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <%= current_collaborator.name %> <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li>
-          <%= link_to 'Meu Perfil', collaborators_path %>
-        </li>
-        <li>
-          <%= link_to 'Editar Perfil', edit_collaborator_path(current_collaborator) %>
-        </li>
-        <li>
-          <%= link_to 'Filmes', movies_path %>
-        </li>
-        <li>
-          <%= link_to 'Logout', collab_leave_path, method: :delete %>
-        </li>
-      </ul>
-    </div>
+    <button type="button" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown">
+      <%= current_collaborator.name %> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to 'Meu Perfil', collaborators_path %>
+      </li>
+      <li>
+        <%= link_to 'Editar Perfil', edit_collaborator_path(current_collaborator) %>
+      </li>
+      <li>
+        <%= link_to 'Logout', collab_leave_path, method: :delete %>
+      </li>
+    </ul>
   <% elsif manager_signed_in? %>
-    <div class="dropdown">
-      <a type="button" href="#" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <%= current_manager.name %> <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li>
-          <%= link_to 'Meu Perfil', managers_path %>
-        </li>
-        <li>
-          <%= link_to 'Editar Perfil', edit_manager_path(current_manager) %>
-        </li>
-        <li>
-          <%= link_to 'Filmes', movies_path %>
-        </li>
-        <li>
-          <%= link_to 'Logout', manager_leave_path, method: :delete %>
-        </li>
-      </ul>
-    </div>
+    <button type="button" class="dropdown-toggle btn btn-outline-success my-2 my-sm-0" data-toggle="dropdown">
+      <%= current_manager.name %> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to 'Meu Perfil', managers_path %>
+      </li>
+      <li>
+        <%= link_to 'Editar Perfil', edit_manager_path(current_manager) %>
+      </li>
+      <li>
+        <%= link_to 'Logout', manager_leave_path, method: :delete %>
+      </li>
+    </ul>
   <% else %>
     <a href="/login/index">
-      <form class="form-inline">
-        <button type="button" class="btn btn-outline-success my-2 my-sm-0"> 
-          Login
-        </button>
-      </form>
+      <button href="/login/index" type="button" class="btn btn-outline-success my-2 my-sm-0"> 
+        Login
+      </button>
     </a>
   <% end %>
+  </div>
 </nav>

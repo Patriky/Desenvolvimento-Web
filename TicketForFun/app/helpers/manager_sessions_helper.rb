@@ -1,9 +1,9 @@
 module ManagerSessionsHelper
-  def sign_in(manager)
+  def manager_sign_in(manager)
     session[:manager_id] = manager.id
   end
 
-  def sign_out
+  def manager_sign_out
     session.delete(:manager_id)
   end
 

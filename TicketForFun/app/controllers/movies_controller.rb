@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+
+  before_action :require_logged_in_manager, only: [:new, :edit, :update, :destroy]
+  before_action :require_logged_in_collaborator, only: [:edit, :update]
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
   # GET /movies

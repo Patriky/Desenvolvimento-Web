@@ -34,10 +34,10 @@
     Comprar Ingresso
   </button>
 </a>
-
 <br>
-
-<button type="button" class="btn btn-outline-dark btn-sm">
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
-</button>
+<% if manager_signed_in? || collaborator_signed_in? %>
+  <button type="button" class="btn btn-outline-dark btn-sm">
+    <%= link_to 'Edit', edit_movie_path(@movie) %> |
+    <%= link_to 'Back', movies_path %>
+  </button>
+<% end %>

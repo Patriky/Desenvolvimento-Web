@@ -6,7 +6,7 @@ class ManagerSessionsController < ApplicationController
   def create
     manager = Manager.find_by(code: params[:session][:code].downcase)
     if manager && manager.authenticate(params[:session][:password])
-      sign_in(manager)
+      manager_sign_in(manager)
       redirect_to manager_path(manager)
     else
       flash.now[:danger] = 'Email ou senha inválidos'
@@ -15,8 +15,8 @@ class ManagerSessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
-    flash.now[:success] = 'Logout com sucesso'
+    manager_sign_out
+    flash[:success] = 'Logout com sucesso'
     redirect_to login_index_path
   end
 end

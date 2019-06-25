@@ -11,4 +11,7 @@ class Manager < ApplicationRecord
                                        format: { with: VALID_EMAIL_REGEX },
                                        uniqueness: { case_sensitive: true }
 
+#    has_many :cinema
+#    has_many :collaborators
+
 end

@@ -1,9 +1,9 @@
 module CollaboratorSessionsHelper
-  def sign_in(collaborator)
+  def collaborator_sign_in(collaborator)
     session[:collaborator_id] = collaborator.id
   end
 
-  def sign_out
+  def collaborator_sign_out
     session.delete(:collaborator_id)
   end
 

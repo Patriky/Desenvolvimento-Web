@@ -1,9 +1,9 @@
 module UserSessionsHelper
-  def sign_in(user)
+  def user_sign_in(user)
     session[:user_id] = user.id
   end
 
-  def sign_out
+  def user_sign_out
     session.delete(:user_id)
   end
 

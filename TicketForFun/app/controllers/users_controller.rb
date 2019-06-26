@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :require_logged_in_collaborator, only: [:destroy]
+  before_action :require_logged_in_user, only: [:index, :show, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   # GET /users
@@ -19,6 +22,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if @user.id != current_user.id
+      flash[:danger] = 'Área restrita.'
+      redirect_to movies_path
+    end
   end
 
   # POST /users

@@ -1,4 +1,7 @@
 class CollaboratorsController < ApplicationController
+
+  before_action :require_logged_in_manager, only: [:new, :create, :destroy]
+  before_action :require_logged_in_collaborator, only: [:show, :index, :edit, :update]
   before_action :set_collaborator, only: [:show, :edit, :update, :destroy]
 
   # GET /collaborators
@@ -19,6 +22,10 @@ class CollaboratorsController < ApplicationController
 
   # GET /collaborators/1/edit
   def edit
+    if @collaborator.id != current_collaborator.id
+      flash[:danger] = 'Área restrita.'
+      redirect_to movies_path
+    end
   end
 
   # POST /collaborators

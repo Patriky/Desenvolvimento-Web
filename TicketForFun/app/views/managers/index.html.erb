@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Managers</h1>
-
-<!-- Inserir opções de criação, edição e remoção de filmes, colaboradores, usários, entre outros... -->
 <a href="/movies">
   <button type="button" class="btn btn-outline-success my-2 my-sm-0">
     Voltar para filmes
   </button>
 </a>
+<br>
+<!-- Inserir opções de criação, edição e remoção de filmes, colaboradores, usários, entre outros... -->
+<h1>Managers</h1>
 <table>
   <thead>
     <tr>
@@ -33,7 +32,33 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Manager', new_manager_path %>
+<br>
+<h1>Collaborators</h1>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Collaborator.all.each do |collaborator| %>
+      <tr>
+        <td><%= collaborator.code %></td>
+        <td><%= collaborator.name %></td>
+        <td><%= collaborator.email %></td>
+        <td><%= collaborator.password %></td>
+        <td><%= link_to 'Destroy', collaborator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Collaborator', new_collaborator_path %>

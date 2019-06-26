@@ -1,6 +1,8 @@
 class ManagerSessionsController < ApplicationController
   def new
+    p "testes antes"
     redirect_to manager_path(current_manager) if manager_signed_in?
+    p "teste"
   end
 
   def create

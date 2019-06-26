@@ -1,4 +1,6 @@
 class ManagersController < ApplicationController
+
+  before_action :require_logged_in_manager
   before_action :set_manager, only: [:show, :edit, :update, :destroy]
 
   # GET /managers

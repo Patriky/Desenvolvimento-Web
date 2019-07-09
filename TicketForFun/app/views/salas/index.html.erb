@@ -4,7 +4,16 @@
 <div class="container">
   <h2>Escolha o seu assento:</h2>
   <br>
+  <% @capacity = @salas.first.capacity %>
   <div id="createSeating" class="createSeating"></div>
+  <br>
+  <a>
+    <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="comprar('<%= @capacity %>')">
+      Comprar
+    </button>
+  </a>
+  <br>
+  <div id="comprar" class="comprar"></div>
 </div>
 
 <!-- Fazer um botão para comprar (pagina de pagamento) gerando boleto, etc -->

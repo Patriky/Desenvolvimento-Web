@@ -5,6 +5,7 @@
   Cidade: <%= f.text_field :city %><br/>
   Tipo de estabelecimento: <%= f.text_field :type_of_establishment %><br/>
   Preco: <%= f.text_field :price %><br/>
+  Gerente: <%= f.collection_select(:manager_id, Manager.all, :id, :name) %> <br/>
   <%= f.submit %>
 <% end %>
 

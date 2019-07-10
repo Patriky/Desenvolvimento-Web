@@ -11,7 +11,7 @@ class ManagerSessionsController < ApplicationController
       manager_sign_in(manager)
       redirect_to manager_path(manager)
     else
-      flash.now[:danger] = 'Email ou senha inválidos'
+      flash.now[:danger] = 'Código ou senha inválidos'
       render 'new'
     end
   end

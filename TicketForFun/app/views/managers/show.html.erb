@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @manager.password %>
+  <strong>Cinema relacionado:</strong>
+  <%= @manager.cinema.name if @manager.cinema %>
 </p>
 
 <%= link_to 'Edit', edit_manager_path(@manager) %> |

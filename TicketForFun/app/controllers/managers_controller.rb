@@ -30,7 +30,7 @@ class ManagersController < ApplicationController
 
     respond_to do |format|
       if @manager.save
-        format.html { redirect_to @manager, notice: 'Manager was successfully created.' }
+        format.html { redirect_to new_cinema_path, notice: 'Manager was successfully created.' }
         format.json { render :show, status: :created, location: @manager }
       else
         format.html { render :new }

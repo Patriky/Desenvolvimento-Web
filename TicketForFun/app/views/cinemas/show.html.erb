@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div style="background-color: yellow;">
+<div>
 	<h2><%= @cinema.name %></h2>
      <p>
                <b >ID:</b> <%=  @cinema.id %>
@@ -14,7 +14,9 @@
      <p>
                <b>Preço</b> <%= @cinema.price %>
      </p>
-
+     <p>
+               <b>Gerente</b> <%= @cinema.manager.name if @cinema.manager %>
+     </p>
  </div>
 
 

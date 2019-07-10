@@ -46,4 +46,51 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <br>
+  <br>
+  <h2>&emsp;Em Breve</h2>
+  <div id="myCarousel2" class="carousel slide" data-interval="10000" data-ride="carousel" align="center">
+    <div class="carousel-inner row w-100 mx-auto" role="listbox">
+      <!-- Iniciliza o Carousel (active) -->
+      <div class="carousel-item col-md-20 active">
+        <% if @movies.length < 3 %>
+          <% for index in 3 ... @movies.length %>
+            <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+          <% end %>
+        <% else %>
+          <% for index in 3 ... @movies.length %>
+            <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+          <% end %>
+        <% end %>
+      </div>
+      <!-- Se houver mais filmes, mostra de 3 em 3 no Carousel -->
+      <% if @movies.length > 3 %>
+        <div class="carousel-item col-md-20">
+          <% i = 3 %>
+          <% while i < @movies.length %>
+            <% if i + 3 <= @movies.length %>
+              <% for index in i ... i + 3 %>
+                <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+              <% end %>
+            <% elsif i + 3 > @movies.length %>
+              <% for index in i ... @movies.length %>
+                <%= link_to (image_tag @movies[index].avatar.url(:medium)), @movies[index] %>
+              <% end %>
+            <% end %>
+            <% i += 3 %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
 </div>

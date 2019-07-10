@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   
   get 'login/index'
 
+  get 'footer/faleconosco', to: 'footer#faleconosco'
+  get 'footer/perguntas', to: 'footer#perguntas'
+  get 'footer/termos', to: 'footer#termos'
+
   root 'movies#index'
 
 end

@@ -28,8 +28,8 @@ class CinemasController < ApplicationController
 
     respond_to do |format|
       if @cinema.save
-        format.html { redirect_to @cinema, notice: 'Cinema was successfully created.' }
-        format.json { render :show, status: :created, location: @cinema }
+        format.html { redirect_to managers_path }
+        format.json { render :show, status: :created, location: managers_path }
       else
         format.html { render :new }
         format.json { render json: @cinema.errors, status: :unprocessable_entity }
@@ -70,7 +70,7 @@ class CinemasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cinema_params
       params.fetch(:cinema, {})
-      params.require(:cinema).permit(:name, :city, :type_of_establishment)
+      params.require(:cinema).permit(:name, :city, :type_of_establishment, :price, :manager_id)
 
     end
 end
